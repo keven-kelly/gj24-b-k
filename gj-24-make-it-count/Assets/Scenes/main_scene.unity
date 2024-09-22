@@ -608,7 +608,7 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.7}
+  m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 1719027160}
   - component: {fileID: 1719027159}
   - component: {fileID: 1719027158}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -938,7 +938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1774400567295817696, guid: bc6a6aa9a3c921a40952b393362097ff, type: 3}
       propertyPath: m_SortingOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2331010924912868910, guid: bc6a6aa9a3c921a40952b393362097ff, type: 3}
       propertyPath: m_Radius
@@ -959,6 +959,14 @@ PrefabInstance:
     - target: {fileID: 4273498325951088912, guid: bc6a6aa9a3c921a40952b393362097ff, type: 3}
       propertyPath: m_Name
       value: Golem_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4273498325951088912, guid: bc6a6aa9a3c921a40952b393362097ff, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4273498325951088912, guid: bc6a6aa9a3c921a40952b393362097ff, type: 3}
+      propertyPath: m_TagString
+      value: golem_1
       objectReference: {fileID: 0}
     - target: {fileID: 7312474858776448604, guid: bc6a6aa9a3c921a40952b393362097ff, type: 3}
       propertyPath: m_Constraints
@@ -1064,6 +1072,14 @@ PrefabInstance:
     - target: {fileID: 472379156756143678, guid: fa677f2f25ba49e4dafc365580aba453, type: 3}
       propertyPath: m_Name
       value: Dark_Knight
+      objectReference: {fileID: 0}
+    - target: {fileID: 472379156756143678, guid: fa677f2f25ba49e4dafc365580aba453, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 472379156756143678, guid: fa677f2f25ba49e4dafc365580aba453, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5083651942797598475, guid: fa677f2f25ba49e4dafc365580aba453, type: 3}
       propertyPath: m_ApplyRootMotion
