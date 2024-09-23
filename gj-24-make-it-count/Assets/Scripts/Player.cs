@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     BoxCollider2D groundCheck;
     public LayerMask groundMask;
     bool grounded;
-
+    GameManager gameManager;
     #endregion
     #region Serialized Field Variables
     [SerializeField] float maxRunSpeed = 8.0f;
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         playerSprite = playerBody.gameObject.GetComponent<SpriteRenderer>();
         playerAnimation = playerBody.gameObject.GetComponent<Animator>();
         groundCheck = GetComponentInChildren<BoxCollider2D>();
-
+        gameManager = GameManager.instance;
         //enemy and player ignore collision
         Physics2D.IgnoreLayerCollision(8, 7);
     }
