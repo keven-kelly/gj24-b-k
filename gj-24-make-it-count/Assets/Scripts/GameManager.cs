@@ -57,9 +57,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+    private void FixedUpdate()
+    {
         updateHUD();
     }
-
     private void updateLives()
     {
         livetrack.text = "x " + playerLives.ToString();
