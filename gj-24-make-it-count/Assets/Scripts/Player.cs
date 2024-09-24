@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     BoxCollider2D groundCheck;
     public LayerMask groundMask;
     bool grounded;
+    GameManager gameManager;
 
     #endregion
     #region Serialized Field Variables
@@ -36,7 +37,8 @@ public class Player : MonoBehaviour
     {        
         playerMove();
     }
-
+   
+    #region Methods
     private void playerMove()
     {
         moveInput = 0;
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour
         playerSprite = playerBody.gameObject.GetComponent<SpriteRenderer>();
         playerAnimation = playerBody.gameObject.GetComponent<Animator>();
         groundCheck = GetComponentInChildren<BoxCollider2D>();
+        gameManager = GameManager.instance;
 
         //enemy and player ignore collision
         Physics2D.IgnoreLayerCollision(8, 7);
@@ -114,6 +117,7 @@ public class Player : MonoBehaviour
     {
         grounded = (Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0);
     }
+    #endregion
 
     #region Collisions
     private void OnCollisionEnter2D(Collision2D collision)
