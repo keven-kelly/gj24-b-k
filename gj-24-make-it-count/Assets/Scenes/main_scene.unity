@@ -867,6 +867,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  knockbackForce: 100
+  damage: 1
   maxRunSpeed: 8
   acceleration: 10
   deceleration: 20
@@ -3040,6 +3042,50 @@ PrefabInstance:
       propertyPath: h1SpriteRenderer
       value: 
       objectReference: {fileID: 1121984976}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h2SpriteRenderer
+      value: 
+      objectReference: {fileID: 98395681}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h3SpriteRenderer
+      value: 
+      objectReference: {fileID: 887986389}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h4SpriteRenderer
+      value: 
+      objectReference: {fileID: 1323403762}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h5SpriteRenderer
+      value: 
+      objectReference: {fileID: 1129350489}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h6SpriteRenderer
+      value: 
+      objectReference: {fileID: 1959307578}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h7SpriteRenderer
+      value: 
+      objectReference: {fileID: 1237739027}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h8SpriteRenderer
+      value: 
+      objectReference: {fileID: 1429930215}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h9SpriteRenderer
+      value: 
+      objectReference: {fileID: 293913965}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h10SpriteRenderer
+      value: 
+      objectReference: {fileID: 1595688438}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h11SpriteRenderer
+      value: 
+      objectReference: {fileID: 1133247840}
+    - target: {fileID: 6859187264220509834, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
+      propertyPath: h12SpriteRenderer
+      value: 
+      objectReference: {fileID: 1033841796}
     - target: {fileID: 8560176794514092112, guid: c4b6d96420a08424594cf9ce9edc7a00, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.7154465

@@ -473,8 +473,8 @@ public class GameManager : MonoBehaviour
         {
             frameCounter = 0;
             score += (score + 2)/2;
-            playerLives = score / 2;
-            levelCounter = playerLives/2;
+            //playerLives = score / 2;
+            //levelCounter = playerLives/2;
             player.DeacreaseHealth(1);
             if(player.getPlayerHealth() == 0)
             {

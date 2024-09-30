@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     public LayerMask groundMask;
     bool grounded;
     GameManager gameManager;
+    public float knockbackForce = 100f;
+    public int damage = 1;
 
     #endregion
     #region Serialized Field Variables
@@ -173,7 +175,14 @@ public class Player : MonoBehaviour
     #region Collisions
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        Collider2D collider = collision.collider;
+        IDamageable damageable = collider.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            Vector2 direction = (collider.transform.position - transform.position).normalized;
+            Vector2 knockback = direction * knockbackForce;
+            damageable.OnHit(damage, knockback);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
