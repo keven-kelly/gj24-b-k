@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     #region Variables
+    public int playerMaxHP;
+    public int playerHP;
+    public int playerLives;
     Animator playerAnimation;
     Rigidbody2D playerBody;
     SpriteRenderer playerSprite;
@@ -46,6 +49,7 @@ public class Player : MonoBehaviour
         RunAnimation();
         JumpAnimation();
     }
+   
     private void Init()
     {
         playerBody = GetComponentInChildren<Rigidbody2D>();
@@ -56,7 +60,14 @@ public class Player : MonoBehaviour
 
         //enemy and player ignore collision
         Physics2D.IgnoreLayerCollision(8, 7);
+        Physics2D.IgnoreLayerCollision(8, 8);//so if multiplayer, users can walk through one another.
+
+        //initial player state
+        playerMaxHP = 3; //number of containers
+        playerHP = 6;    //current health, each container is 2 HP (empty, half, or full)
+        playerLives = 3;
     }
+ 
     private void playerDirectionAnimation()
     {
         if (Input.GetKey(KeyCode.A))
@@ -70,6 +81,7 @@ public class Player : MonoBehaviour
             playerSprite.flipX = false;
         }
     }
+   
     private void RunAnimation()
     {
         float targetSpeed = moveInput * maxRunSpeed;
@@ -82,6 +94,7 @@ public class Player : MonoBehaviour
         if (vel > 0.8) playerAnimation.SetFloat("speed", 1);
         else playerAnimation.SetFloat("speed", 0);
     }
+  
     private void JumpAnimation()
     {
         if (Input.GetKey(KeyCode.Space) && grounded)
@@ -109,14 +122,52 @@ public class Player : MonoBehaviour
             playerAnimation.SetBool("jumping", false);
         }
     }
+  
     private void FixedUpdate()
     {
         CheckGround();
     }
+  
     private void CheckGround()
     {
         grounded = (Physics2D.OverlapAreaAll(groundCheck.bounds.min, groundCheck.bounds.max, groundMask).Length > 0);
     }
+    
+    public void IncreaseMaxHealth()
+    {
+        playerMaxHP++;
+        playerHP += 2;
+    }
+
+    public void DecreaseMaxHealth()
+    {
+        playerHP -= 2;
+        playerMaxHP--;
+    }
+
+    public void IncreaseHealth()
+    {
+        playerHP += 2;
+        if(playerHP > (2 * playerMaxHP)) playerHP = (2 * playerMaxHP);
+    }
+
+    public void DeacreaseHealth(int dmg)
+    {
+        playerHP -= dmg;
+        if(playerHP <0) playerHP = 0;
+        if (playerHP == 0) playerDeath();
+    }
+
+    public void playerDeath()
+    {
+        //set animation and reduce 
+        playerLives--;
+        //if (playerLives == 0) gameManager.GAMEOVER();
+    }
+
+    public int getPlayerMaxHealth() { return playerMaxHP; }
+   
+    public int getPlayerHealth() { return playerHP; }
     #endregion
 
     #region Collisions
